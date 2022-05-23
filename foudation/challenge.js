@@ -1,57 +1,24 @@
-// 1
-const firstFunction = (a) => {
-    let array = [];
-    for(let i = 1; i <= a; i++) {
-        array.push(i);
-    }
-    console.log(array)
-}
-firstFunction(5);
+// Função Range
+const range = (a, b, s) => {
+    let array = []
+    let n1 = b === undefined ? 1 : a;
+    let n2 = b === undefined ? a : b;
+    let n3 = s === undefined ? 1 : s;
 
-//2
-const secondFunction = (a,b) => {
-    let array = [];
-    if (a < b) {
-        for(let i = a; i <= b; i++) {
+    if (b > a || b === undefined) {       
+        for(let i = n1; i <= n2; i += n3) {
             array.push(i);
-        }    
+        }        
     } else {
-        for(let i =b; i <= a; i++) {
+        for(let i = n1; i >= n2; i -= n3) {
             array.push(i);
-        }
+        }        
     }
+    
     console.log(array)
 }
-secondFunction(6,11);
 
-//3
-const thirdFunction = (a,b,c) => {
-    let array = [];
-    if (a < b) {
-        for(let i = a; i <= b; i += c) {
-            array.push(i);
-        }    
-    } else {
-        for(let i = b; i <= a; i += c) {
-            array.push(i);
-        }
-    }
-    console.log(array)
-}
-thirdFunction(10,19,2);
-
-//4
-const forthFunction = (a,b) => {
-    let array = [];
-    if (a < b) {
-        for(let i = b; i >= a; i--) {
-            array.push(i);
-        }    
-    } else {
-        for(let i = a; i >= b; i--) {
-            array.push(i);
-        }
-    }
-    console.log(array)
-}
-forthFunction(6,2);
+range(5)
+range(6,11)
+range(10,19,2)
+range(6,2)
